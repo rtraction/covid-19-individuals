@@ -1,4 +1,4 @@
-# COVID-19 Business Self Assessment Tool
+# COVID-19 Financial Aid Self Assessment Tool for individuals
 
 **NOTE:** This tool was forked off an existing tool ongov / covid-19-self-assessment - most info here is taken from it, too
 
