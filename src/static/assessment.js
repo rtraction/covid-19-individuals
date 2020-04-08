@@ -163,7 +163,7 @@ $(document).ready(function() {
     self = true;
     prev = q2;
     disable(q2);
-    reveal(q4);
+    reveal(q3);
     stack.push(q2);
   });
 
@@ -172,7 +172,7 @@ $(document).ready(function() {
     is_ei = false;
     prev = q3;
     disable(q3);
-    reveal(cerb);
+    reveal(q4);
     stack.push(q3);
   });
   $("#ei_yes").click(function() {
@@ -192,14 +192,26 @@ $(document).ready(function() {
   $("#income_no").click(function() {
     prev = q4;
     disable(q4);
-    reveal(none);
+    if (is_ei) {
+      reveal(q5);
+    }
+    else {
+      reveal(q4);
+    }
     stack.push(q4);
   });
 
   $("#income_yes").click(function() {
     prev = q4;
     disable(q4);
-    reveal(q5);
+    if (is_ei == false) {
+      reveal(cerb);
+    }  else if (self == true) {
+        reveal(q6);
+      } else {
+        reveal(q5);
+      }
+
     stack.push(q4);
   });
 
@@ -208,43 +220,43 @@ $(document).ready(function() {
     employClosure = true;
     employMedical = false;
     employOther = false;
-    prev = q4;
-    disable(q4);
+    prev = q5;
+    disable(q5);
     reveal(regEI);
-    stack.push(q4);
+    stack.push(q5);
   });
 
   $("#employMedical").click(function() {
     employMedical = true;
     employClosure = false;
     employOther = false;
-    prev = q4;
-    disable(q4);
+    prev = q5;
+    disable(q5);
     reveal(sickEI);
-    stack.push(q4);
+    stack.push(q5);
   });
   $("#employOther").click(function() {
     employOther = true;
     employClosure = false;
     employMedical = false;
-    prev = q4;
-    disable(q4);
+    prev = q5;
+    disable(q5);
     reveal(cerb);
-    stack.push(q4);
+    stack.push(q5);
   });
 
-  // q5 btns
+  // q6 btns
   $("#selfMedical").click(function() {
-    prev = q5;
-    disable(q5);
+    prev = q6;
+    disable(q6);
     reveal(cerb);
     reveal(sickEIself);
-    stack.push(q5);
+    stack.push(q6);
   });
   $("#selfReduction").click(function() {
-    prev = q5;
-    disable(q5);
+    prev = q6;
+    disable(q6);
     reveal(cerb);
-    stack.push(q5);
+    stack.push(q6);
   });
 });
