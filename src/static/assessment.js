@@ -196,7 +196,7 @@ $(document).ready(function() {
       reveal(q5);
     }
     else {
-      reveal(q4);
+      reveal(none);
     }
     stack.push(q4);
   });
