@@ -21,6 +21,7 @@ $(document).ready(function() {
   // RESULT "PAGES"
   var cerb = $("#cerb"),
     sickEI = $("#sickEI"),
+    resultframe = $("#resultframe"),
     regEI = $("#regEI"),
     sickEIself = $("#sickEIself"),
     EIself = $("#EIself"),
@@ -28,7 +29,7 @@ $(document).ready(function() {
 
   // ARRAYS OF QUESTION/RESULT PAGES (used to show/hide content)
   var qArray = [q0, q1, q2, q3, q4, q5, q6];
-  var rArray = [cerb, sickEI, regEI, sickEIself, EIself, none];
+  var rArray = [cerb, resultframe, sickEI, regEI, sickEIself, EIself, none];
 
   var footer = $("footer");
 
@@ -255,18 +256,24 @@ $(document).ready(function() {
   $("#selfMedical").click(function() {
     prev = q6;
     disable(q6);
-    reveal(cerb);
+    if (income_drop == true) {
+      reveal(cerb);
+    }
     if (is_ei == true) {
-        reveal(sickEIself);
+      reveal(resultframe);
+      reveal(sickEIself);
     }
     stack.push(q6);
   });
   $("#selfReduction").click(function() {
     prev = q6;
     disable(q6);
-    reveal(cerb);
+    if (income_drop == true) {
+      reveal(cerb);
+    }
     if (is_ei == true) {
-        reveal(EIself);
+      reveal(resultframe);
+      reveal(EIself);
     }
     stack.push(q6);
   });
