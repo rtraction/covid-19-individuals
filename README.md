@@ -2,7 +2,7 @@
 
 **NOTE:** This tool was forked off an existing tool ongov / covid-19-self-assessment - most info here is taken from it, too
 
-This tool is supposed to help businesses in Ontario to quickly check for possible financial support during the Covid-19 crisis. Its parent is based on a modified version of the Alberta Health Services tool to which we have applied Ontario design system styling and made a number of functional changes. Those changes include but are not limited to:
+This tool is supposed to help persons navigate the Canada Emergency Response Beenfit and Employment Insurance measures by answering simple questions. This will help to easily identify which financial support an individual might be eligible for. Its parent is based on a modified version of the Alberta Health Services tool to which we have applied Ontario design system styling and made a number of functional changes. Those changes include but are not limited to:
 
 - Changed logic and flow of the application to fit the message Ontario Health wanted to convey
 - Changed markup to fit our design and to conform to HTML standards
