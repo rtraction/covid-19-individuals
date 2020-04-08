@@ -126,6 +126,7 @@ $(document).ready(function() {
   var stack = [],
     self = false,
     is_ei = false,
+    income_drop = false,
     employMedical = false,
     employClosure = false,
     employOther = false;
@@ -187,7 +188,7 @@ $(document).ready(function() {
 
   // q4 btns
   $("#income_no").click(function() {
-    income_drop = false
+    income_drop = false;
     prev = q4;
     disable(q4);
     if (is_ei == true && self == true) {
@@ -195,23 +196,22 @@ $(document).ready(function() {
     } else if (is_ei == true && self == false) {
       reveal(q5);
     } else {
-      reveal(none);
+    reveal(none);
     }
     stack.push(q4);
   });
 
   $("#income_yes").click(function() {
-    income_drop == true
+    income_drop = true;
     prev = q4;
     disable(q4);
     if (is_ei == false) {
       reveal(cerb);
     }  else if (self == true) {
-        reveal(q6);
-      } else {
-        reveal(q5);
-      }
-
+      reveal(q6);
+    } else {
+      reveal(q5);
+    }
     stack.push(q4);
   });
 
@@ -222,9 +222,6 @@ $(document).ready(function() {
     employOther = false;
     prev = q5;
     disable(q5);
-    if (income) {
-
-    }
     reveal(regEI);
     stack.push(q5);
   });
@@ -259,8 +256,10 @@ $(document).ready(function() {
     if (income_drop == true) {
       reveal(cerb);
     }
-    if (is_ei == true) {
+    if (income_drop == false) {
       reveal(resultframe);
+    }
+    if (is_ei == true) {
       reveal(sickEIself);
     }
     stack.push(q6);
@@ -271,8 +270,10 @@ $(document).ready(function() {
     if (income_drop == true) {
       reveal(cerb);
     }
-    if (is_ei == true) {
+    if (income_drop == false) {
       reveal(resultframe);
+    }
+    if (is_ei == true) {
       reveal(EIself);
     }
     stack.push(q6);
