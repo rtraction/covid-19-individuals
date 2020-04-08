@@ -192,7 +192,7 @@ $(document).ready(function() {
   $("#income_no").click(function() {
     prev = q4;
     disable(q4);
-    if (is_ei) {
+    if (is_ei == true) {
       reveal(q5);
     }
     else {
